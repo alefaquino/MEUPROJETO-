@@ -1,0 +1,69 @@
+<!DOCTYPE html >
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/usuario_css/login_usuario.css}">
+    <title>Login</title>
+</head>
+
+<body>
+<script th:src="@{/js/usuario_js/login_usuario.js}" defer></script>
+
+<div class="container">
+    <div class="form-image">
+
+        <img th:src="@{/img/usuario_img/login_usuario.gif}" alt="gif de login">
+    </div>
+
+
+
+    <div class="form">
+
+        <div class="login-button">
+            <button type="submit"><a th:href="@{/cadastro/usuario}">Cadastre-se</a></button>
+        </div>
+
+        <form action="/login/usuario" method="post">
+            <div class="form-header">
+                <div class="title">
+                    <h1>Login</h1>
+                </div>
+
+
+            </div>
+
+            <div class="input-group">
+
+
+                <div class="input-box">
+                    <label for="email">Login</label>
+                    <input id="email" type="email" name="email" class="linha-email" placeholder="Informe o email" required data-input>
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Senha</label>
+                    <input id="password" type="password" name="senha" class="linha-senha" placeholder="Digite a Senha" required="required">
+                </div>
+
+                <div class="input-exibir-senha">
+                    <label for="confirmPassword">Exibir Senha</label>
+                    <input type="checkbox" id="confirmPassword" name="confirmPassword" onchange="exibirPassword()">
+                </div>
+
+            </div>
+            <div class="btn-cadastrar">
+                <button id="btn-cadastrar" type="submit"><a>Entrar</a></button>
+            </div>
+
+            <a th:href="@{/esqueceu/senha}" class="esqueceu-senha">Esqueceu a senha?</a>
+            
+
+    </div>
+
+    </form>
+</div>
+</body>
+
+</html>

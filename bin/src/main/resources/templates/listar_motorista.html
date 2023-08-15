@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Dados Motorista</th>
+
+    </tr>
+    <tr th:each="motorista : ${motorista}">
+        <td th:text="${motorista.nome}"> </td>
+        <td th:text="${motorista.cnh}"> </td>
+        <td th:text="${motorista.email}"> </td>
+        <td th:text="${motorista.telefone}"> </td>
+        <td th:text="${motorista.senha}"> </td>
+        <td th:text="${motorista.data}"> </td>
+        <td><a th:href="|/motorista/editar/${motorista.id}"> editar </a>
+            <a th:href="|/motorista/deletar/${motorista.id}"> deletar </a>
+        </td>
+    </tr>
+
+
+</table>
+
+
+</body>
+</html>

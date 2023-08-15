@@ -1,7 +1,7 @@
 # Centauri
 <h3>Sobre:</h3>
 
-<p>Um lugar onde você encontra motoristas com veículos que atendem suas necessidades, para realizar viagens, frestes e mudanças!</p>
+<p>Um lugar onde vocÃª encontra motoristas com veÃ­culos que atendem suas necessidades, para realizar viagens, frestes e mudanÃ§as!</p>
 
 <h3>Contribuidores:</h3>
 

@@ -1,0 +1,104 @@
+
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/servico_css/escolher_servico.css}">
+    <title>Escolher Serviço</title>
+  </head>
+  <body>
+          <script></script>
+
+           <!-- direcionamento da pagina do head do usuairo -->
+          <div th:include="usuario_html/header-usuario.html"></div>
+
+
+    <div class="container" >
+      <!-- Card 1 -->
+      <div class="card card-1">
+        <div class="card-header">
+          <img th:src= "@{/img/servico_img/viagem_servico.jpg}" class="card-img"/>
+        </div>
+        <!-- card-body -->
+        <div class="card-body">
+          <h2 class="card-titulo">Viagem</h2>
+          <div class="input-box">
+          <label for="">Selecione o Veiculo</label>
+          <select name="" id="veiculo">
+            <option id="" value="" ></option>
+            <option value="carro">Carro</option>
+            <option value="kombi">Kombi</option>
+            <option value="van">Van</option>
+            <option value="van">Onibus</option>
+          </select>
+          <br>
+          <label for="">Quantidade minima de acentos</label>
+          <input type="text">
+        </div>
+      </div>
+        <!-- card-body -->
+        <div class="card-footer">
+          <a th:href="@{/usuario/escolher/viagem}">Buscar</a>
+        </div>
+      </div>
+      <!-- Card 1 -->
+
+
+      <!-- Card 2 -->
+      <div class="card card-2">
+        <div class="card-header">
+        <img th:src="@{/img/servico_img/mudanca_servico.jpg}" class="card-img"/>
+        </div>
+        <!-- card-body -->
+        <div class="card-body">
+          <h2 class="card-titulo">Mudança</h2>
+          <div class="input-box">
+          <label for="">Selecione o Veiculo</label>
+          <select name="" id="veiculo">
+            <option id="" value="" ></option>
+            <option value="caminhao">Caminhão</option>
+          </select>
+          <br>
+          <label for="">Carga minima em KG</label>
+          <input type="text">
+        </div>
+      </div>
+        <!-- card-body -->
+        <div class="card-footer">
+          <a th:href="@{/usuario/escolher/servico/mudanca}">Buscar</a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+
+
+      <!-- Card 3 -->
+      <div class="card card-3">
+        <div class="card-header">
+          <img th:src="@{/img/servico_img/frete_servico.jpg}" class="card-img"/>
+        </div>
+        <!-- card-body -->
+        <div class="card-body">
+          <h2 class="card-titulo">Frete</h2>
+          <div class="input-box">
+          <label for="">Selecione o Veiculo</label>
+          <select name="" id="veiculo">
+            <option id="" value="" ></option>
+            <option value="caminhonete">Caminhonete</option>
+          </select>
+          <br>
+          <label for="">Carga minima em Litros</label>
+          <input type="text">
+        </div>
+      </div>
+        <!-- card-body -->
+        <div class="card-footer">
+          <a th:href="@{/usuario/escolher/servico/frete}">Buscar</a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      
+     
+    </div>
+  </body>
+</html>

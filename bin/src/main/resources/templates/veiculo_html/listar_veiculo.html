@@ -1,0 +1,60 @@
+
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" th:href="@{/css/veiculo_css/listar_veiculo.css}">   
+  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Litar Veiculo</title>
+</head>
+
+<body>
+
+
+  <!-- direcionamento da pagina do head do motorista -->
+<div th:include="motorista_html/header-motorista.html"></div>
+
+
+    <div class="container">
+
+      <div class="link"><h3>Seus Veiculos Cadastrados</h3></div>
+
+        <table class="table table-striped">
+            <thead>
+              <tr>  
+
+                <th scope="col">Imagem</th>
+                <th scope="col">Documento Veiculo</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Nome-Modelo</th>
+                <th scope="col">Capacidade</th>
+                <th scope="col">Serviço</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <tr th:each="veiculo : ${veiculo}">
+                  <td>foto do veiculo aq</td>
+                  <td th:text="${veiculo.documento}"> </td>
+                  <td th:text="${veiculo.automovel}"> </td>
+                  <td th:text="${veiculo.nomeModelo}"> </td>
+                  <td th:text="${veiculo.capacidade}"> </td>
+                  <td th:text="${veiculo.servico}"> </td>
+               <td>
+                <a th:href="|/veiculo/editar/${veiculo.id}"
+                class="btn btn-primary" role="button" style=" background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));">Editar</a>
+
+                <a 
+                 class="btn btn-primary" role="button" style=" background: linear-gradient(to right, rgba(100, 2, 0, 0.9), rgb(255, 0, 0));"  
+                 th:href="|/veiculo/deletar/${veiculo.id}">Exluir</a>
+            </td>
+              </tr>
+             
+             
+
+    </div>
+    </body>
+    <script th:src="@{js/veiculo_js/listar_veiculo.js}" defer></script>
+</html>

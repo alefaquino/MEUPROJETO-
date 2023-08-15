@@ -1,0 +1,137 @@
+
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/veiculo_css/cadastro_veiculo.css}">
+ 
+
+    <title>Cadastro Veiculo</title>
+</head>
+
+<body>
+    
+
+
+       <!-- direcionamento da pagina do head do motorista -->
+<div th:include="motorista_html/header-motorista.html"></div>
+
+
+
+
+    <div class="container">
+        <div class="form-image">
+    
+            <img th:src="@{/img/veiculo_img/cadastro_veiculo02.jpg}" alt="imagem cadastro veiculo">
+
+        </div>
+
+        <div class="form">
+            <form action="/veiculo/cadastrar" method="post">
+              
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastro Veiculo</h1>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="input-group">
+
+                   
+
+
+                    <div class="input-box">
+                        <label for="veiculo" class="nome-select">Selecione o Veiculo</label>
+
+
+                        <select id="veiculo" name="automovel" onchange="ocultar_servico()" >
+                            <option value=""></option>
+                            <option id="carro" value="CARRO" name="carro" >Carro</option>
+                            <option id="kombi" value="KOMBI" name="kombi">Kombi</option>
+                            <option id="van" value="VAN" name="van">Van</option>
+                            <option id="onibus" value="ONIBUS" name="onibus">Onibus</option>
+                            <option id="caminhonete" value="CAMINHONETE" name="caminhonete">Caminhonete</option>
+                            <option id="caminhao" value="CAMINHAO" name="caminhao">Caminhão</option>
+                        </select>  
+
+
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="" class="nome-select">Servico Selecionado</label>
+                        <select id="servico"  name="servico" onchange="ocultar_servico()" >
+                            <option id="" value=""></option>
+                            <option id="frete" value="FRETE"  name="frete">Frete</option>
+                            <option id="mudanca" value="MUDANCA" name="mudanca" >Mudança</option>
+                            <option id="viagem" value="VIAGEM" name="viagem" >Viagem</option>
+                           
+                        </select>  
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="">Numero do documento do veiculo</label>
+                        <input id="numero_veiculo" type="text" name="documento" class="linha-numero_veiculo" placeholder="Numero Documento Veiculo" required data-input>  
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Placa veiculo</label>
+                        <input id="placa_veiculo" type="text" name="placa" class="linha-placa_veiculo" placeholder="Informe a placa do Veiculo" required data-input>  
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Nome/Modelo</label>
+                        <input id="nome-modelo" type="text" name="nomeModelo" class="linha-nome-modelo" placeholder="Nome/modelo do veiculo" required data-input>  
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Ano Fabricação</label>
+                        <input id="ano_fabricacao" type="year" name="anoFabricacao" class="linha-ano_fabricacao" placeholder="Informe o Ano Fabricação" required data-input>  
+                    </div>
+
+
+                    <div class="input-box" >
+                        <label for="" >Capacidade Maxima</label>
+                         <input id="max_kg" type="text" name="capacidade" class="linha-max_kg" placeholder="lugares ou carga max KG / L" required data-input > 
+                     </div>
+                    
+
+                    <div class="input-box">
+
+                        
+                        <div class="input-box">
+                            <label for="">Confirme sua CNH</label>
+                            <input type="text" name="cnh" required="required" >  
+                        </div>
+                           
+
+                    </div>
+
+                    <div class="input-box">
+                        <label for="foto">Selecione uma foto do Veiculo</label>
+                        <input type="file" id="foto" name="foto" accept="image/*" style="width: 480px;">
+                    </div>
+       
+                        <div class="input-box">
+                            <label for="">Observações Adicionais</label>
+                            <textarea id="mensagem" name="observacoes" rows="3" cols="65"></textarea>
+                        </div>
+
+                </div>
+
+                <div class="continue-button">
+                    <button type="submit"><a>Cadastrar</a></button>
+                    <div th:text="${msgError}" th:style="${style}"> </div>
+                    <div th:text="${msgSucess}" th:style="${style}"> </div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+    <script th:src="@{/js/veiculo_js/cadastrar_veiculo.js}" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+
+<html lang="pt-br"  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/motorista_css/cadastro_motorista.css}">
+    <title>Cadastro Motorista</title>
+</head>
+
+<body>
+    <script th:src="@{/js/motorista_js/cadastro_motorista.js}" defer></script>
+
+    
+    <div class="container">
+
+
+        
+        <div class="form-image">
+             <img th:src="@{/img/motorista_img/cadastro_motorista.svg}" alt="imagem cadastro-endereco" >
+        </div>
+
+        <div class="form">
+            <form action="/cadastro/motorista" method="post">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastro Do Motorista</h1>
+                    </div>
+                    <div class="login-button">
+                        <button type="button"><a th:href="@{/login/motorista}">Ir Login</a></button>
+                    </div>
+                    
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="nome">Nome Sobrenome</label>
+                        <input id="nome" type="text" name="nome" placeholder="Nome e ultimo Sobrenome" required="required">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cnh">CNH</label>
+                        <input id="cnh" type="text" name="cnh" placeholder="Digite numero da CNH" minlength="10" required="required">
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="celular" placeholder="(xx) xxxx-xxxx" required="required">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="dataNascimento" class="nome-data">Data Nascimento</label>
+                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data" required="required">
+                    </div>
+
+                  
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required="required">
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="senha" placeholder="Digite sua senha" minlength="8" required="required">
+
+                    </div>
+
+                    
+                    <div class="input-exibir-senha">
+                        <label for="confirmPassword">Exibir Senha</label>
+                        <input type="checkbox" id="confirmPassword" name="confirmPassword" onchange="exibirPassword()">
+                    </div>
+
+                </div>
+                <div class="input-box">
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Sexo</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input id="feminino" type="radio" name="sexo" value="FEMININO" required data-input>
+                            <label for="FEMININO">Feminino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="masculino" type="radio" name="sexo" value="MASCULINO" required data-input>
+                            <label for="MASCULINO">Masculino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="outro" type="radio" name="sexo" value="OUTRO" required data-input>
+                            <label for="OUTRO">Outro</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button type="submit"><a>Cadastrar</a> </button>
+
+                    <div th:text="${msgError}" th:style="${style}"> </div>
+                    <div th:text="${msgSucess}" th:style="${style}"> </div>
+                </div>
+            </form>
+        </div>
+
+   
+    
+               
+                
+
+                
+          
+    </div>
+</body>
+
+</html>
