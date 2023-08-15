@@ -1,0 +1,24 @@
+CREATE TABLE usuario (
+    id INT PRIMARY KEY,
+    senha VARCHAR(255),
+    nome VARCHAR(100),
+    email VARCHAR(100),
+    cpf VARCHAR(11),
+    numero VARCHAR(20),
+    dataNascimento DATE,
+    sexo CHAR(1),
+    codVerificar VARCHAR(10)
+);
+
+CREATE TABLE evento (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    nomeEvento VARCHAR(100),
+    local VARCHAR(100),
+    celular VARCHAR(20),
+    dataEvento DATE,
+    observacoes TEXT,
+    codVerificar VARCHAR(10),
+    idUsuario INT,
+    FOREIGN KEY (idUsuario) REFERENCES usuario(id)
+);
